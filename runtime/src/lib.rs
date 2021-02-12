@@ -330,6 +330,13 @@ impl pallet_identity::Trait for Runtime {
 	type WeightInfo = weights::pallet_identity::WeightInfo;
 }
 
+impl pallet_did::Trait for Runtime {
+	type Event = Event;
+	type Public = sp_runtime::MultiSigner;
+	type Signature = Signature;
+	type Time = pallet_timestamp::Module<Runtime>;
+}
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
 	pub enum Runtime where
@@ -349,6 +356,7 @@ construct_runtime!(
 		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
 		Nicks: pallet_nicks::{Module, Call, Storage, Event<T>},
 		Identity: pallet_identity::{Module, Call, Storage, Event<T>},
+		PalletDID: pallet_did::{Module, Call, Storage, Event<T>},
 	}
 );
 

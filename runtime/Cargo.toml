@@ -57,6 +57,7 @@ sp-version = { default-features = false, version = '2.0.1' }
 ## Additonal dependencies
 pallet-nicks = { default-features = false, version = '2.0.1' }
 pallet-identity = { default-features = false, version = '2.0.1' }
+pallet-did = { git = 'https://github.com/substrate-developer-hub/pallet-did', default-features = false, version = '2.0.0' }
 
 [features]
 default = ['std']
@@ -99,4 +100,5 @@ std = [
     'sp-version/std',
     'pallet-nicks/std',
     'pallet-identity/std',
+    'pallet-did/std',
 ]
